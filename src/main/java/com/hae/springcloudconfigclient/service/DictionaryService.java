@@ -22,4 +22,12 @@ public class DictionaryService {
         map.put("en_confirm", en_confirm);
         return map;
     }
+
+    public String getKo(){
+        return kr_confirm;
+    }
+
+    public String getEn(){
+        return en_confirm;
+    }
 }
