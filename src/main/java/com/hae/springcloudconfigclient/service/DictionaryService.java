@@ -1,28 +1,25 @@
 package com.hae.springcloudconfigclient.service;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.stereotype.Service;
 
-/**
- * @author madplay
- */
-@Service
-@RefreshScope // 여기가 다르다.
-public class DynamicConfigService {
+import java.util.HashMap;
+import java.util.Map;
 
-    @Value("${taeng.profile}")
-    private String profile;
-    @Value("${taeng.comment}")
-    private String comment;
+@Service
+@RefreshScope
+public class DictionaryService {
+
+    @Value("${ko.button.confirm}")
+    private String kr_confirm;
+    @Value("${en.button.confirm}")
+    private String en_confirm;
 
     public Map<String, String> getConfig() {
         Map<String, String> map = new HashMap<>();
-        map.put("profile", profile);
-        map.put("comment", comment);
+        map.put("kr_confirm", kr_confirm);
+        map.put("en_confirm", en_confirm);
         return map;
     }
 }

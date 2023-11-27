@@ -1,10 +1,11 @@
 package com.hae.springcloudconfigclient.controller;
 
+import com.hae.springcloudconfigclient.service.DictionaryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.hae.springcloudconfigclient.service.DynamicConfigService;
+import com.hae.springcloudconfigclient.service.ConfigService;
 
 /**
  * @author madplay
@@ -12,16 +13,22 @@ import com.hae.springcloudconfigclient.service.DynamicConfigService;
 @RestController
 public class ConfigController {
 
-    private final DynamicConfigService configDynamicService;
+    //private final ConfigService configDynamicService;
+    private final DictionaryService dictionaryService;
 
-    @Autowired // 단일 생성자여서 어노테이션을 제외해도 되긴하다.
-    public ConfigController(DynamicConfigService configDynamicService) {
-        this.configDynamicService = configDynamicService;
+    @Autowired
+    public ConfigController(DictionaryService dictionaryService) {
+        //this.configDynamicService = configDynamicService;
+        this.dictionaryService = dictionaryService;
     }
 
-
-    @GetMapping(value = "/dynamic")
-    public Object getConfigFromDynamic() {
+    /*@GetMapping(value = "/config")
+    public Object getConfig() {
         return configDynamicService.getConfig();
+    }*/
+
+    @GetMapping(value = "/dictionary")
+    public Object getDictionary() {
+        return dictionaryService.getConfig();
     }
 }

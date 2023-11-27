@@ -4,9 +4,9 @@ spring:
   config:
     import: "optional:configserver:"
   profiles: # 여기에 지정해도 되고, 실행할 때 지정해도 된다.
-    active: dev
+    active: test02
   application:
-    name: config
+    name: dictionary
   cloud:
     config:
       uri: http://localhost:8088
