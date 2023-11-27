@@ -12,22 +12,22 @@ import java.util.Map;
 public class DictionaryService {
 
     @Value("${ko.button.confirm}")
-    private String kr_confirm;
+    private String kr;
     @Value("${en.button.confirm}")
-    private String en_confirm;
+    private String en;
 
     public Map<String, String> getConfig() {
         Map<String, String> map = new HashMap<>();
-        map.put("kr_confirm", kr_confirm);
-        map.put("en_confirm", en_confirm);
+        map.put("kr", kr);
+        map.put("en", en);
         return map;
     }
 
     public String getKo(){
-        return kr_confirm;
+        return kr;
     }
 
     public String getEn(){
-        return en_confirm;
+        return en;
     }
 }
