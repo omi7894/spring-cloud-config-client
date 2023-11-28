@@ -11,7 +11,7 @@ import java.util.Map;
 @RefreshScope
 public class DictionaryService {
 
-    @Value("${ko.button.confirm}")
+    @Value("${kr.button.confirm}")
     private String kr;
     @Value("${en.button.confirm}")
     private String en;
@@ -23,7 +23,7 @@ public class DictionaryService {
         return map;
     }
 
-    public String getKo(){
+    public String getKr(){
         return kr;
     }
 
